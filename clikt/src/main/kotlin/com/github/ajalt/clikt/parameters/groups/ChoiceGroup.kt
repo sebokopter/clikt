@@ -10,6 +10,8 @@ import com.github.ajalt.clikt.parameters.options.Option
 import com.github.ajalt.clikt.parameters.options.OptionDelegate
 import com.github.ajalt.clikt.parameters.options.RawOption
 import com.github.ajalt.clikt.parameters.options.switch
+import com.github.ajalt.clikt.parameters.options.withDefault
+import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parsers.OptionParser
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
@@ -74,7 +76,7 @@ class ChoiceGroup<GroupT : OptionGroup, OutT>(
  * @see com.github.ajalt.clikt.parameters.types.choice
  */
 fun <T : OptionGroup> RawOption.groupChoice(choices: Map<String, T>): ChoiceGroup<T, T?> {
-    return ChoiceGroup(copy(completionCandidates = Fixed(choices.keys)), choices) { it }
+    return ChoiceGroup(choice(choices.mapValues { it.key }), choices) { it }
 }
 
 /**

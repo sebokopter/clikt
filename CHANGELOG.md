@@ -7,6 +7,7 @@
 
 ### Changed
 - Shell completion code is now printed by throwing a `PrintCompletionMessage` (a subclass of `PrintMessage`) rather than calling `echo` directly.
+- `option()` and `argument()` now take optional `completionCandidates` parameters to override how completion is generated. The constructor and `copy` functions of `OptionsWithValues` and `ProcessedArgument` have changed to support default values.
 
 ## [2.2.0] - 2019-09-25
 ### Added

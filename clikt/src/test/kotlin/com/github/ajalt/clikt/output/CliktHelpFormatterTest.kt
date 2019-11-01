@@ -431,8 +431,8 @@ class CliktHelpFormatterTest {
                 |  --opt2 TEXT
                 |
                 |Options:
-                |  --opt TEXT
-                |  -h, --help  Show this message and exit
+                |  --opt [g1|g2]
+                |  -h, --help     Show this message and exit
                 """.trimMargin("|")
     }
 
