@@ -4,6 +4,7 @@
 ### Added
 - `option().groupSwitch()`, which works like `groupChoice()`, but uses a `switch()` option rather than a `choice()` option.
 - `UsageError` now has a `statusCode` parameter (which defaults to 1). If you're using `ClicktCommand.main`, the value of `statusCode` will be passed to `exitProcess`. 
+- `CompletionCandidates.Fixed` now has a secondary convenience constructor that take a `vararg` of `String`s
 
 ### Changed
 - Shell completion code is now printed by throwing a `PrintCompletionMessage` (a subclass of `PrintMessage`) rather than calling `echo` directly.
